@@ -52,7 +52,7 @@ static __weak UIAlertView *alertView;
 //    NSLog(@"%@: %@", title, message);
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *cfa = [UIAlertAction actionWithTitle:additionalButtonTitle style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction *cfa = [UIAlertAction actionWithTitle:additionalButtonTitle ? additionalButtonTitle : @"好的" style:UIAlertActionStyleDefault handler:nil];
         [ac addAction:cfa];
         UIViewController *svc = nil;
         if (@available(iOS 13.0,*)){
